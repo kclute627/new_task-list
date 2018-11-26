@@ -1,0 +1,36 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+.App {
+  text-align: center;
+}
+.top {
+  margin: 30px 0;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-1{
+  text-align: center;
+ 
+  color: red;
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+ 
+
+}
+.list-item{
+  color: black;
+  list-style-type: none;
+  text-align: center;
+  
+
+}
+ul{
+  padding-inline-start: 0;
+}
