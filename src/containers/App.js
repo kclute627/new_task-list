@@ -9,7 +9,7 @@ class App extends Component {
 
   state = {
     toDoList : [],
-    
+    offList: [],    
     currentTask: '',
   }
 
@@ -36,10 +36,36 @@ class App extends Component {
 
   }
 
+  removeHandler = (index, item) => {
+    
+    const newList = this.state.toDoList.filter(el => el.key !== index )
+    const newDel = this.state.toDoList.filter(el => el.key === index )
   
-// dateHandler = ()=> {
-//   ///return() find way to return the date
-// }
+    this.setState({
+      toDoList: [...newList],
+      offList: [...this.state.offList, {item: item, key: index}] 
+    })
+  }
+
+  
+dateHandler = ()=> {
+  var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd = '0'+dd
+} 
+
+if(mm<10) {
+    mm = '0'+mm
+} 
+
+today = mm + '/' + dd + '/' + yyyy;
+
+  return today;
+}
 
   render() {
     return (
@@ -54,8 +80,10 @@ class App extends Component {
       <div className='top'>
       <ListDisplay 
       list = {this.state.toDoList}
+      remove = {this.removeHandler}
       /> 
-      <DeletedItems />
+      <DeletedItems
+      list= {this.state.offList} />
       </div>
      
         

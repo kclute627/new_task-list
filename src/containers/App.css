@@ -34,3 +34,19 @@
 ul{
   padding-inline-start: 0;
 }
+.icon-1{
+  display: inline-block;
+  margin: 0 auto;  
+  font-size: 23px;
+  cursor: pointer;
+  color: green;
+  
+ 
+
+}
+.icon-1:hover{
+  color: red;
+}
+.del-item{
+  text-decoration: line-through;
+}

@@ -4,12 +4,28 @@ import React from 'react'
 
 
 const userInput =(props)=>{
+    
+    let today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth()+1; //January is 0!
+    const yyyy = today.getFullYear();
+      
+      if(dd<10) {
+          dd = '0'+dd
+      } 
+      
+      if(mm<10) {
+          mm = '0'+mm
+      } 
+      
+      today = `${mm}/${dd}/${yyyy}`
+      
 
 
     return(
         <div>
             <h1>Your to-do List</h1>
-            <h2>Insert Date </h2>
+            <h2>{today} </h2>
             <input 
             type="text"
             onChange = {props.change}
