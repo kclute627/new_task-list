@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import UserInput from '../Components/UserInput/Userinput';
 import ListDisplay from '../Components/ListDisplay/ListDisplay';
 import DeletedItems from '../Components/DeletedItems/DeletedItems';
@@ -48,24 +49,7 @@ class App extends Component {
   }
 
   
-dateHandler = ()=> {
-  var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
 
-if(dd<10) {
-    dd = '0'+dd
-} 
-
-if(mm<10) {
-    mm = '0'+mm
-} 
-
-today = mm + '/' + dd + '/' + yyyy;
-
-  return today;
-}
 
   render() {
     return (
@@ -90,6 +74,16 @@ today = mm + '/' + dd + '/' + yyyy;
       </div>
     );
   }
+}
+
+App.propTypes = {
+  remove: PropTypes.func,
+  list: PropTypes.array,
+  
+  date: PropTypes.string,
+  value: PropTypes.func,
+  
+
 }
 
 export default App;
